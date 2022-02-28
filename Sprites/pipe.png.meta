@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: -5010173287851080642
     second: 193-1935502_cliparts-similar-to-pipe-clipart-mario-mario-8-bit-sprite-pipe_0
+  - first:
+      213: -7347277767829423379
+    second: pipe_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 193-1935502_cliparts-similar-to-pipe-clipart-mario-mario-8-bit-sprite-pipe_0
+      name: pipe_0
       rect:
         serializedVersion: 2
         x: 245
@@ -124,8 +127,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e344c7290f9487ab0800000000000000
-      internalID: -5010173287851080642
+      spriteID: deaf6663cc9390a90800000000000000
+      internalID: -7347277767829423379
       vertices: []
       indices: 
       edges: []
