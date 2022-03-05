@@ -3,6 +3,7 @@
 [RequireComponent(typeof(Bird))]
 public class BirdCollisionHandler : MonoBehaviour
 {
+    [SerializeField] private AudioClip _getPoint;
     private Bird _bird;
 
     private void Start()
@@ -14,6 +15,7 @@ public class BirdCollisionHandler : MonoBehaviour
     {       
         if (collision.TryGetComponent(out ScoreZone scoreZone))
         {
+            GetComponent<AudioSource>().PlayOneShot(_getPoint);
             _bird.IncreaseScore();
         }
 

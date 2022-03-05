@@ -4,8 +4,11 @@ public class Game : MonoBehaviour
 {
     [SerializeField] private Bird _bird;
     [SerializeField] private PipeGenerator _pipeGenerator;
+    [SerializeField] private CloudGenerator _cloudGenerator;
     [SerializeField] private StartScreen _startScreen;
     [SerializeField] private GameOverScreen _gameOverScreen;
+    [SerializeField] private AudioClip _buttonPress;
+
 
     private void OnEnable()
     {
@@ -29,18 +32,21 @@ public class Game : MonoBehaviour
 
     private void OnPlayButtonClick()
     {
+        PlayMusic();
         _startScreen.Close();
-        StartGame();
+        OnStartGame();
     }
 
     private void OnRestartButtonClick()
     {
+        PlayMusic();
         _gameOverScreen.Close();
         _pipeGenerator.ResetPool();
-        StartGame();
+        _cloudGenerator.ResetPool();
+        OnStartGame();
     }
 
-    private void StartGame()
+    private void OnStartGame()
     {
         Time.timeScale = 1;
         _bird.ResetPlayer();
@@ -50,5 +56,10 @@ public class Game : MonoBehaviour
     {
         Time.timeScale = 0;
         _gameOverScreen.Open();
+    }
+
+    private void PlayMusic()
+    {
+        GetComponent<AudioSource>().PlayOneShot(_buttonPress);
     }
 }
