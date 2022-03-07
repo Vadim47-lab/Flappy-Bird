@@ -4,6 +4,8 @@
 public class BirdCollisionHandler : MonoBehaviour
 {
     [SerializeField] private AudioClip _getPoint;
+    [SerializeField] private AudioClip _gameOver;
+
     private Bird _bird;
 
     private void Start()
@@ -21,6 +23,7 @@ public class BirdCollisionHandler : MonoBehaviour
 
         else
         {
+            GetComponent<AudioSource>().PlayOneShot(_gameOver);
             _bird.Die();
         }
     }
